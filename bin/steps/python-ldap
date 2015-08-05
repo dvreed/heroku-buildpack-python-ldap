@@ -80,7 +80,7 @@ PYTHON_LDAP_VERSION='git+https://github.com/rbarrois/python-ldap.git@py3#egg=pyt
 
 mkdir tmpdir
 if [ -n "$PYTHON_LDAP_VERSION" ]; then
-    pip install -d tmpdir python-ldap==${PYTHON_LDAP_VERSION}
+    pip install -d tmpdir ${PYTHON_LDAP_VERSION}
 else
     pip install -d tmpdir python-ldap
     PYTHON_LDAP_VERSION=`ls tmpdir | grep python-ldap | sed 's/python-ldap-\(.*\)\.tar\.gz/\1/g'`
