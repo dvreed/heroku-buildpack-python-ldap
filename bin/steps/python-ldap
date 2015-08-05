@@ -82,10 +82,13 @@ mkdir tmpdir
 echo "Installing python-ldap from git...." | indent
 pip install -d tmpdir git+https://github.com/rbarrois/python-ldap.git@py3#egg=python-ldap
 cd tmpdir
+echo "Unzipping..." | indent
 unzip python-ldap-2.4.14.zip
 cd python-ldap
+echo "Replacing libray/include dirs..." | indent
 sed "s,library_dirs = \(.*\),library_dirs = $BUILD_DIR/.python-ldap/lib-openldap/lib \1,g" setup.cfg > setup.cfg
 sed "s,include_dirs = \(.*\),include_dirs = $BUILD_DIR/.python-ldap/lib-openldap/include \1,g" setup.cfg > setup.cfg
+echo "Installing..." | indent
 pip install .
 cd ../..
 rm -rf tmpdir
