@@ -77,7 +77,7 @@ echo "Open LDAP enabled." | indent
 
 echo "Installing python-ldap ..." | indent
 #PYTHON_LDAP_VERSION='git+https://github.com/rbarrois/python-ldap.git@py3#egg=python-ldap'
-pip install -e git+https://github.com/rbarrois/python-ldap.git@py3#egg=python-ldap
+pip install git+https://github.com/rbarrois/python-ldap.git@py3#egg=python-ldap
 
 #mkdir tmpdir
 #if [ -n "$PYTHON_LDAP_VERSION" ]; then
