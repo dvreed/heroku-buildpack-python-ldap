@@ -76,7 +76,7 @@ cp -R $CACHE_DIR/.python-ldap/lib-openldap $BUILD_DIR/.python-ldap/lib-openldap
 echo "Open LDAP enabled." | indent
 
 echo "Installing python-ldap ..." | indent
-PYTHON_LDAP_VERSION=`cat requirements.txt | grep python-ldap | awk -F '=' '{ print $3 }'`
+PYTHON_LDAP_VERSION='-e git://github.com/rbarrois/python-ldap.git@py3#egg=python-ldap'
 
 mkdir tmpdir
 if [ -n "$PYTHON_LDAP_VERSION" ]; then
